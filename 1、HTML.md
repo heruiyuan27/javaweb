@@ -145,9 +145,11 @@ Hyper Text Markup Language 超文本标记语言
 <a href="http://www.itcast.cn">点我</a><br>
 <a href="http://www.itcast.cn" target="_self">点我</a><br>
 <a href="http://www.itcast.cn" target="_blank">点我</a><br>
+
 <a href="./5_列表标签.html">列表标签</a><br>
 
 <a href="mailto:itcast@itcast.cn">联系我们</a><br>
+
 <a href="http://www.itcast.cn"><img src="image/jiangwai_1.jpg"></a>
 ```
 ##表格标签
@@ -161,17 +163,17 @@ Hyper Text Markup Language 超文本标记语言
 			* cellspacing：定义单元格之间的距离。如果指定为0，则单元格的线会合为一条、
 			* bgcolor：背景色
 			* align：对齐方式
-		* tr：定义行
+		* tr：定义行，里面可以有td和th
 			* bgcolor：背景色
 			* align：对齐方式
 		* td：定义单元格
 			* colspan：合并列
 			* rowspan：合并行
 		* th：定义表头单元格
-		* <caption>：表格标题
-		* <thead>：表示表格的头部分
-		* <tbody>：表示表格的体部分
-		* <tfoot>：表示表格的脚部分
+            * <caption>：表格标题
+            * <thead>：表示表格的头部分
+            * <tbody>：表示表格的体部分
+            * <tfoot>：表示表格的脚部分
 ```
 ##表单标签
 
@@ -220,8 +222,7 @@ Hyper Text Markup Language 超文本标记语言
 						* src属性指定图片的路径	
 
 * label：指定输入项的文字描述信息
-* 注意：
-* label的for属性一般会和input的id属性值 对应。如果对应了，则点击label区域，会让input输入框获取焦点。
+	for属性一般会和input的id属性值对应。如果对应了，则点击label区域，会让input输入框获取焦点。
 
 		* select: 下拉列表
 			* 子元素：option，指定列表项
