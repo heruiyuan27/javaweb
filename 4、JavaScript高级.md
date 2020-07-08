@@ -141,11 +141,12 @@ light.onclick = function(){
 	1. 创建(获取)：
 		1. window.location
 		2. location
-
 	2. 方法：
 		* reload()	重新加载当前文档。刷新
 	3. 属性
-		* href	设置或返回完整的 URL。
+		* href	设置或返回完整的 URL。http://www.baidu.com。
+		* port  端口8080
+		* protocol  协议http
 ```
 
 ##自动跳转
@@ -204,14 +205,14 @@ light.onclick = function(){
 
 * W3C DOM 标准被分为 3 个不同的部分：
 
-	* 核心 DOM - 针对任何结构化文档的标准模型
+* 核心 DOM - 针对任何结构化文档的标准模型
 		* Document：文档对象
 		* Element：元素对象
 		* Attribute：属性对象
 		* Text：文本对象
 		* Comment:注释对象
 
-		* Node：节点对象，其他5个的父对象
+		* Node：节点对象，继承object，是其他5个的父对象。
 	* XML DOM - 针对 XML 文档的标准模型
 	* HTML DOM - 针对 HTML 文档的标准模型
 ```
@@ -367,11 +368,9 @@ light.onclick = function(){
 	3. 控制元素样式
 		1. 使用元素的style属性来设置
 			如：
-				 //修改样式方式1
 		        div1.style.border = "1px solid red";
 		        div1.style.width = "200px";
-		        //font-size--> fontSize
-		        div1.style.fontSize = "20px";
+		     	div1.style.fontSize = "20px";
 		2. 提前定义好类选择器的样式，通过元素的className属性来设置其class属性值。
 ```
 
