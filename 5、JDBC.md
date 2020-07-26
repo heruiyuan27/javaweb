@@ -1,6 +1,6 @@
 #JDBC基础
 
-JDBC=概念：Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库
+概念：JDBC=Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库
 
 其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即==接口==。各个数据库厂商去实现这套接口，提供==数据库驱动jar包==。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的==实现类==。
 
@@ -18,10 +18,8 @@ JDBC=概念：Java DataBase Connectivity  Java 数据库连接， Java语言操�
 	
 	反射使用：  Class.forName("com.mysql.jdbc.Driver");
 	
-	静态块调用静态方法：static void registerDriver(Driver driver) 
-	
 	```java
-	//执行静态块 完成注册 com.mysql.jdbc.Driver
+	//静态块调用静态方法：static void registerDriver(Driver driver) 完成注册 com.mysql.jdbc.Driver
 	static {
 		try {
 			java.sql.DriverManager.registerDriver(new Driver());
@@ -189,7 +187,7 @@ public static List<Emp> findAll() {
     } catch (SQLException e) {
         e.printStackTrace();
     } finally {
-        if (rs != null) {
+        if (rs != null) {//如果连接失败，rs可能空指针异常
             try {
                 rs.close();
             } catch (SQLException e) {
@@ -446,7 +444,7 @@ public class JDBCUtils {
 }
 ```
 
-#SpringJDBC
+#SpringJDBC√
 
 Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发。
 
@@ -469,7 +467,7 @@ JdbcTemplate template = new JdbcTemplate(ds);
 * queryForObject：查询结果，将结果封装为对象
 	* 一般用于聚合函数的查询
 
-```
+```java
 @Test
 public void test2(){
 	String sql="insert into emp (id,ename,dept_id) values(?,?,?) ";
@@ -477,7 +475,7 @@ public void test2(){
 }
 ```
 
-```
+```java
 @Test
 public void test5(){
     String sql="select * from emp";
@@ -488,7 +486,7 @@ public void test5(){
 }
 ```
 
-```
+```java
 @Test
 public void test6(){
     String sql="select * from emp";
@@ -499,7 +497,7 @@ public void test6(){
 }
 ```
 
-```
+```java
 @Test
 public void test7(){
     String sql="select count(id) from emp";
