@@ -2,7 +2,7 @@
 
 ```
 * 概念：Hyper Text Transfer Protocol 超文本传输协议
-	* 传输协议：定义了，客户端和服务器端通信时，发送数据的格式
+	* 传输协议：定义了客户端和服务器端通信时发送数据的格式
 	* 特点：
 		1. 基于TCP/IP的高级协议
 		2. 默认端口号:80
@@ -71,9 +71,9 @@
 	2. request对象是来获取请求消息，response对象是来设置响应消息
 
 2. request对象继承体系结构：	
-	ServletRequest		--	接口
+	ServletRequest		--接口
 		|	继承
-	HttpServletRequest	-- 接口
+	HttpServletRequest	--接口
 		|	实现
 	org.apache.catalina.connector.RequestFacade 类(tomcat)
 
@@ -92,7 +92,7 @@
 					* String getQueryString()
 				5. (*)获取请求URI：/day14/demo1
 					* String getRequestURI():		/day14/demo1
-					* StringBuffer getRequestURL()  :http://localhost/day14/demo1
+					* StringBuffer getRequestURL()  :		http://localhost/day14/demo1
 
 					* URL:统一资源定位符 ： http://localhost/day14/demo1	中华人民共和国
 					* URI：统一资源标识符 : /day14/demo1					共和国
@@ -129,7 +129,7 @@
     4. Map<String,String[]> getParameterMap():获取所有参数的map集合
 ```
 
-```
+```java
         Enumeration<String> parameterNames = req.getParameterNames();
         /*while(parameterNames.hasMoreElements()){
             String name = parameterNames.nextElement();
@@ -161,8 +161,9 @@
 ```
 * 中文乱码问题：
 * get方式：tomcat 8 已经将get方式乱码问题解决了
-* post方式：会乱码
-* 解决：在获取参数前，设置request的编码request.setCharacterEncoding("utf-8");
+* post方式：乱码
+* 解决：在获取参数前，
+	设置request的编码request.setCharacterEncoding("utf-8");
 ```
 
 ## 请求转发
@@ -171,21 +172,25 @@
 请求转发：一种在服务器内部的资源跳转方式
 		1. 步骤：
 			1. 通过request对象获取请求转发器对象：RequestDispatcher getRequestDispatcher(String path)
-			2. 使用RequestDispatcher对象来进行转发：forward(ServletRequest request, ServletResponse response) 
+			2. 使用RequestDispatcher对象来进行转发：forward(ServletRequest request, ServletResponse response)
+            
 		2. 特点：
 			1. 浏览器地址栏路径不发生变化
 			2. 只能转发到当前服务器内部资源中。
 			3. 转发是一次请求
+			
 		3. 共享数据：
-			* 域对象：一个有作用范围的对象，可以在范围内共享数据
-			* request域：代表一次请求的范围，一般用于请求转发的多个资源中共享数据
+			* 域对象：域对象是服务器在内存上创建的存储空间，用于在不同动态资源（servlet）之间传递与共享数据。
+			* ServletRequest域：代表一次请求的范围，一般用于请求转发的多个资源中共享数据
 			* 方法：
 				1. void setAttribute(String name,Object obj):存储数据
 				2. Object getAttitude(String name):通过键获取值
 				3. void removeAttribute(String name):通过键移除键值对
 
 		4. 获取ServletContext：
-			* ServletContext getServletContext()
+			* ServletContext域：作用范围整个Web应用（应用范围）。
+			* 方法：
+				* ServletContext getServletContext()
 ```
 
 ![image-20200605162241877](C:\Users\Hery\Desktop\GitHub\javaweb\HTTP&Request.assets\image-20200605162241877.png)
@@ -220,7 +225,7 @@ action=虚拟目录+Servlet的资源路径
 2.3 创建包cn.itcast.dao,创建类UserDao,提供login方法
 ```
 
-```
+```java
 /**
  * 操作数据库中User表的类
  */
@@ -253,7 +258,7 @@ public class UserDao {
 }
 ```
 
-```
+```java
 3.编写cn.itcast.webservlet.LoginServlet类，
 @WebServlet("/loginServlet")
 public class LoginServlet extends HttpServlet {
