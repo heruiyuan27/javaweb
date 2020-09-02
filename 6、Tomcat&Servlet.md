@@ -1,4 +1,4 @@
-#Web相关概念回顾
+#Web相关概念
 
 	1. 软件架构
 		1. C/S：客户端/服务器端
@@ -7,6 +7,7 @@
 	2. 资源分类
 		1. 静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析
 			* 如： html,css,JavaScript
+			
 		2. 动态资源:每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。
 		动态资源被访问后，需要先转换为静态资源，在返回给浏览器
 			* 如：servlet/jsp,php,asp....
@@ -47,7 +48,9 @@
 		4. 启动：
 			* bin/startup.bat ,双击运行该文件即可
 			* 访问：浏览器输入：http://localhost:8080 回车访问自己
-							  http://别人的ip:8080 访问别人
+			另外Apache Tomcat web server安装后，默认的服务端口就是8080。
+		
+			http://ip:8080 访问他人
 			
 			* 可能遇到的问题：
 				1. 黑窗口一闪而过：
@@ -62,8 +65,9 @@
 						* <Connector port="8888" protocol="HTTP/1.1"
 			               connectionTimeout="20000"
 			               redirectPort="8445" />
-						* 一般会将tomcat的默认端口号修改为80。80端口号是http协议的默认端口号。
-							* 好处：在访问时，就不用输入端口号
+						* 一般会将tomcat的默认端口号修改为80。
+							80端口号是http协议的默认端口号。
+						* 好处：在访问时，就不用输入端口号
 		5. 关闭：
 			1. 正常关闭：
 				* bin/shutdown.bat
@@ -76,19 +80,14 @@
 					* /hello：项目的访问路径-->虚拟目录
 					* 简化部署：将项目打成一个war包，再将war包放置到webapps目录下。
 						* war包会自动解压缩
-	
-				2. 配置conf/server.xml文件
-					在<Host>标签体中配置
-					<Context docBase="D:\hello" path="/hehe" />
-					* docBase:项目存放的路径
-					* path：虚拟目录
-				不推荐使用
-	
+						
+					http://localhost:8080/hello/hello.html
+
+				推荐使用
 				3. 在conf\Catalina\localhost创建任意名称的xml文件。在文件中编写
 					<Context docBase="D:\hello" />
 					* 虚拟目录：xml文件的名称
-				推荐使用
-			
+
 			* 静态项目和动态项目：
 				* 目录结构
 					* java动态项目的目录结构：
@@ -174,40 +173,18 @@
 			3. 复写方法
 			4. 在类上使用@WebServlet注解，进行配置
 				@WebServlet("资源路径")			
-				@Target({ElementType.TYPE})
-				@Retention(RetentionPolicy.RUNTIME)
-				@Documented
-				public @interface WebServlet {
-				    String name() default "";//相当于<Servlet-name>
-				
-				    String[] value() default {};//代表urlPatterns()属性配置
-				
-				    String[] urlPatterns() default {};//相当于<url-pattern>
-				
-				    int loadOnStartup() default -1;//相当于<load-on-startup>
-				
-				    WebInitParam[] initParams() default {};
-				
-				    boolean asyncSupported() default false;
-				
-				    String smallIcon() default "";
-				
-				    String largeIcon() default "";
-				
-				    String description() default "";
-				
-				    String displayName() default "";
-				}
 
 #IDEA与tomcat的相关配置
 
 	1. IDEA会为每一个tomcat部署的项目单独建立一份配置文件
 		* 查看控制台的log：Using CATALINA_BASE:  
 	    "C:\Users\Hery\.IntelliJIdea2019.2\system\tomcat\Tomcat_8_5_31_JavaWeb_2"
+	    其conf\Catalina\localhost下，有 虚拟路径.xml文件 ，部署文件指向out下资源
 	
 	2. 工作空间项目    和     tomcat部署的web项目
 		* tomcat真正访问的是“tomcat部署的web项目”，"tomcat部署的web项目"对应着"工作空间项目" 的web目录下的所有资源。
 		"C:\Users\Hery\IdeaProjects\JavaWeb\out\artifacts\servlet_war_exploded"
+		
 		* WEB-INF目录下的资源不能被浏览器直接访问。
 		
 	3. 断点调试：使用"小虫子"启动 dubug 启动
