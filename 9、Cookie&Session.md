@@ -21,11 +21,11 @@
 		2. 发送Cookie对象
 			* response.addCookie(Cookie cookie) 
 		3. 获取Cookie，拿到数据
-			* Cookie[]  request.getCookies()  
+			* Cookie[] = request.getCookies()  
 3. 实现原理
 	* 基于响应头set-cookie和请求头cookie实现【Java已经封装】
 ```
-
+![image-20200611112805965](C:\Users\Hery\Desktop\GitHub\javaweb\Cookie&Session.assets\image-20200611112805965.png)
 ```
 4. cookie的细节
 	1. 一次可不可以发送多个cookie?
@@ -48,16 +48,14 @@
 
 			* setPath(String path):设置cookie的获取范围。默认情况下，设置当前的虚拟目录
 				* 如果要共享，则可以将path设置为"/"
+		2. 不同的tomcat服务器间cookie共享问题？
+		* setDomain(String path):如果设置一级域名相同，那么多个服务器之间cookie可以共享
+			* setDomain(".baidu.com"),那么tieba.baidu.com和news.baidu.com中cookie可以共享				
 ```
-
-			2. 不同的tomcat服务器间cookie共享问题？
-			* setDomain(String path):如果设置一级域名相同，那么多个服务器之间cookie可以共享
-				* setDomain(".baidu.com"),那么tieba.baidu.com和news.baidu.com中cookie可以共享
-![image-20200611112805965](C:\Users\Hery\Desktop\GitHub\javaweb\Cookie&Session.assets\image-20200611112805965.png)
 
 ## Cookie案例
 
-```
+```java
 package cookie;
 
 import javax.servlet.ServletException;
@@ -156,16 +154,15 @@ public class CookieTest extends HttpServlet {
 		* request
 		* response
 		* out：字符输出流对象。可以将数据输出到页面上。和response.getWriter()类似
-			* response.getWriter().write()和out.write()的区别：
+		
+* response.getWriter().write()和out.write()的区别：
 				* 在tomcat服务器真正给客户端做出响应之前，会先找response缓冲区数据，再找out缓冲区数据。
 				* response.getWriter().write()数据输出永远在out.write()之前
 ```
 
 ![image-20200613103742842](C:\Users\Hery\Desktop\GitHub\javaweb\Cookie&Session.assets\image-20200613103742842.png)
 
-## 改造Cookie案例
 
-home.jsp
 
 # Session
 
