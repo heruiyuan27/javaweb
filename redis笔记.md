@@ -76,7 +76,7 @@
 
 # 数据结构与操作命令
 
-![3.列表list数据结构](3.列表list数据结构.bmp)
+![image-20220408101533770](redis笔记.assets/image-20220408101533770.png)
 
 	3. 命令操作
 		1. redis的数据结构：
@@ -189,7 +189,7 @@
 
 
 	4. 持久化
-		1. redis是一个内存数据库，当redis服务器重启，获取电脑重启，数据会丢失，我们可以将redis内存中的数据持久化保存到硬盘的文件中。
+		1. redis是一个内存数据库，当redis服务器重启，获取电脑重启，数据会丢失，可以将redis内存中的数据持久化保存到硬盘的文件中。
 		2. redis持久化机制：
 			1. RDB：默认方式，不需要进行配置，默认就使用这种机制
 				* 在一定的间隔时间中，检测key的变化情况，然后持久化数据
@@ -207,7 +207,6 @@
 			2. AOF：日志记录的方式，可以记录每一条命令的操作。可以每一次命令操作后，持久化数据
 				1. 编辑redis.windwos.conf文件
 					appendonly no（关闭aof） --> appendonly yes （开启aof）
-					
 					# appendfsync always ： 每一次操作都进行持久化
 					appendfsync everysec ： 每隔一秒进行一次持久化
 					# appendfsync no	 ： 不进行持久化
@@ -364,10 +363,10 @@
 			
 			        //2.获取连接
 			        Jedis jedis = jedisPool.getResource();
+			        
 			        //3. 使用
 			        jedis.set("hehe","heihei");
 
-			
 			        //4. 关闭 归还到连接池中
 			        jedis.close();
 
