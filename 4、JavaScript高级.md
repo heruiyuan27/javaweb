@@ -32,7 +32,7 @@
 			light2.onclick = fun2;
 ```
 
-##电灯开关
+## 电灯开关
 
 ```html
 //1.获取图片对象
@@ -55,7 +55,7 @@ light.onclick = function(){
 }
 ```
 
-#BOM
+# BOM
 
 ```
 1. 概念：Browser Object Model 浏览器对象模型
@@ -109,7 +109,7 @@ light.onclick = function(){
         * window引用可以省略。  方法名();
 ```
 
-##轮播图
+## 轮播图
 
 ```html
 <body>
@@ -149,7 +149,7 @@ light.onclick = function(){
 		* protocol  协议http
 ```
 
-##自动跳转
+## 自动跳转
 
 ```html
 <body>
@@ -197,7 +197,7 @@ light.onclick = function(){
         * length	返回当前窗口历史列表中的 URL 数量。
 ```
 
-#DOM
+# DOM
 
 ```
 * 概念： Document Object Model 文档对象模型
@@ -217,7 +217,7 @@ light.onclick = function(){
 	* HTML DOM - 针对 HTML 文档的标准模型
 ```
 
-##核心DOM
+## 核心DOM
 
 
 ```
@@ -359,7 +359,7 @@ light.onclick = function(){
 </body>
 ```
 
-##HTML DOM
+## HTML DOM
 
 ```
 * HTML DOM
@@ -374,7 +374,7 @@ light.onclick = function(){
 		2. 提前定义好类选择器的样式，通过元素的className属性来设置其class属性值。
 ```
 
-##动态表格2
+## 动态表格2
 
 ```html
 //使用innerHTML添加
@@ -518,7 +518,7 @@ light.onclick = function(){
 </script>
 ```
 
-##表单验证
+## 表单验证
 
 ```html
 <script>

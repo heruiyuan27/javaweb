@@ -53,23 +53,7 @@
 			* setDomain(".baidu.com"),那么tieba.baidu.com和news.baidu.com中cookie可以共享				
 ```
 
-## Cookie案例
-
 ```java
-package cookie;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 @WebServlet("/CookieTest")
 public class CookieTest extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

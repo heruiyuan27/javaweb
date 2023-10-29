@@ -72,7 +72,6 @@ public class FilterDemo5 implements Filter {
 					5. ASYNC：异步访问资源
 			* web.xml配置
 				* 设置<dispatcher></dispatcher>标签即可
-			
 	5. 过滤器链(配置多个过滤器)
 		* 执行顺序：如果有两个过滤器：过滤器1和过滤器2
 			1. 过滤器1
@@ -80,7 +79,6 @@ public class FilterDemo5 implements Filter {
 			3. 资源执行
 			4. 过滤器2
 			5. 过滤器1 
-
 		* 过滤器先后顺序问题：
 			1. 注解配置：按照类名的字符串比较规则比较，值小的先执行
 				* 如： AFilter 和 BFilter，AFilter就先执行了。

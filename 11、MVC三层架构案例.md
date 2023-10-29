@@ -12,7 +12,7 @@
 
 ![image-20200619110929964](C:\Users\Hery\Desktop\GitHub\javaweb\MVC三层架构案例.assets\image-20200619110929964.png)
 
-##验证码与登录
+## 验证码与登录
 
 验证码
 
@@ -72,13 +72,13 @@ UserDaoImpl:
 
 ![image-20200623001619717](C:\Users\Hery\Desktop\GitHub\javaweb\MVC三层架构案例.assets\image-20200623001619717.png)
 
-##删除选中
+## 删除选中
 
 ![image-20200626154251348](C:\Users\Hery\Desktop\GitHub\javaweb\MVC三层架构案例.assets\image-20200626154251348.png)
 
 
 
-##分页查询
+## 分页查询
 
 <img src="C:\Users\Hery\Desktop\GitHub\javaweb\MVC三层架构案例.assets\image-20200620223618272.png" alt="image-20200620223618272"  />
 

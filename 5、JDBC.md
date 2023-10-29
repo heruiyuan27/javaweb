@@ -1,6 +1,6 @@
-#JDBC基础
+# JDBC基础
 
-概念：JDBC=Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库
+概念：JDBC = Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库
 
 其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即==接口==。各个数据库厂商去实现这套接口，提供==数据库驱动jar包==。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的==实现类==。
 
@@ -10,9 +10,9 @@
   1.复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下
   2.右键-->Add As Library
 
-#对象
+# 对象
 
-##DriverManager：驱动管理对象
+## DriverManager：驱动管理对象
 
 1. 注册驱动：告诉程序该使用哪一个数据库驱动jar:注册与给定的驱动程序 DriverManager 。 
 	
@@ -50,7 +50,8 @@
 	jdbc:mysql:///db3
 	```
 	
-##Connection：数据库连接对象
+
+## Connection：数据库连接对象
 
 1. 获取执行sql 的对象 pstm或 ==pstmt==		
 
@@ -62,7 +63,7 @@ Statement createStatement()
 提交事务：.commit() 
 回滚事务：.rollback() 
 
-##Statement：执行sql的对象
+## Statement：执行sql的对象
 
 1. boolean execute(String sql) ：可以执行任意的sql（了解） 
 2. int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句。返回值：影响的行数，可以通过这个影响的行数判断DML语句是否执行成功 返回值>0的则执行成功，反之，则失败。
@@ -103,14 +104,13 @@ public class JDBCDemo1 {
 
         }
 
-
     }
 }
 ```
-##PreparedStatement：预执行sql的对象√
+## PreparedStatement：预执行sql的对象√
 
 1. prepareStatement()会先将 SQL 语句发送给数据库预编译。 PreparedStatement 会引用着预编译后的结果。
-  可以多次传入不同的参数给 PreparedStatement 对象并执行。减少 SQL 编译次数，提高效率。
+    可以多次传入不同的参数给 PreparedStatement 对象并执行。减少 SQL 编译次数，提高效率。
 
 2. 安全性更高，没有 SQL 注入的隐患。
 
@@ -130,7 +130,7 @@ pstmt.setString(2,password);
 rs = pstmt.executeQuery();
 ```
 
-##ResultSet：结果集对象
+## ResultSet：结果集对象
 
 boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true
 
@@ -218,10 +218,10 @@ public static List<Emp> findAll() {
 
 1. 静态块：获取url,user,password,driver,同时注册驱动
 	配置文件src目录下jdbc.properties
-url=
-user=
-password=
-driver=
+	url=
+	user=
+	password=
+	driver=
 
 2. 获取connection对象方法
 
@@ -305,11 +305,11 @@ static{
 使用Connection对象来管理事务
 
 1. 开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务
-  在执行sql之前开启事务
+    在执行sql之前开启事务
 2. 提交事务：commit() 
-  当所有sql都执行完提交事务
+    当所有sql都执行完提交事务
 3.  回滚事务：rollback() 
-  在catch中回滚事务
+    在catch中回滚事务
 
 ```java
 try {
@@ -341,17 +341,22 @@ try {
 
 概念：一个容器(集合)，存放数据库连接的容器。
 
-当系统初始化好后，容器被创建，容器中会申请一些连接对象，当用户来访问数据库时，从容器中获取连接对象，用户访问完之后，会将连接对象归还给容器。
+当系统初始化好后，容器被创建，容器中会申请一些连接对象，当用户来访问数据库时，==从容器中获取连接对象，用户访问完之后，会将conn对象归还给容器==。
 
 好处：
 1. 节约资源
 2. 用户访问高效
 
 标准接口：DataSource   （javax.sql）
+
+
+
 1. 方法：
-  获取连接：getConnection()
+    获取连接：getConnection()
 
   归还连接：Connection.close()   如果连接对象Connection是从连接池中获取的。
+
+
 
 2. 一般我们不去实现它，有数据库厂商来实现
     1. C3P0：数据库连接池技术
@@ -391,7 +396,7 @@ DataSource ds = DruidDataSourceFactory.createDataSource(pro);
 Connection conn = ds.getConnection();
 ```
 
-#JDBC工具类2：Druid√
+# JDBC工具类2：Druid√
 
 ```java
 public class JDBCUtils {
@@ -444,7 +449,7 @@ public class JDBCUtils {
 }
 ```
 
-#SpringJDBC√
+# SpringJDBC√
 
 Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发。
 

@@ -185,7 +185,7 @@
 			2. type key ： 获取键对应的value的类型
 			3. del key：删除指定的key value
 
-#持久化
+# 持久化
 
 
 	4. 持久化
@@ -211,7 +211,7 @@
 					appendfsync everysec ： 每隔一秒进行一次持久化
 					# appendfsync no	 ： 不进行持久化
 
-#Jedis
+# Jedis
 
 	5. Java客户端 Jedis
 		* Jedis: 一款java操作redis数据库的工具.
@@ -225,7 +225,7 @@
 	    		//3. 关闭连接
 	    		jedis.close();
 
-#数据结构与操作命令
+# 数据结构与操作命令
 
 ```
 1) 字符串类型 string
@@ -372,7 +372,7 @@
 
 ```
 
-#连接池工具类
+# 连接池工具类
 
 ```java
 package cn.itcast.jedis.util;

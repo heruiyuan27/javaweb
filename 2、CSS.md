@@ -4,12 +4,14 @@ Cascading Style Sheets 层叠样式表
 
 # CSS&html结合方式
 
-##1. 内联样式
+## 1. 内联样式
+
 * 在标签内使用style属性指定css代码 
 ```html
 <div style="color:red;">hello css</div>
 ```
-##2. 内部样式
+## 2. 内部样式
+
 * 在head标签内，定义style标签，style标签的标签体内容就是css代码
 ```html
 <style>
@@ -20,7 +22,8 @@ div{
 
 <div>hello css</div>
 ```
-##3. 外部样式
+## 3. 外部样式
+
 - 定义css资源文件。
 ```html
 a.css文件：
@@ -44,9 +47,9 @@ div{
 </style>
 ```
 
-#CSS语法
+# CSS语法
 
-##1. 基础选择器
+## 1. 基础选择器
 
 id选择器，元素选择器，类选择器，其中元素选择器优先级最低
 

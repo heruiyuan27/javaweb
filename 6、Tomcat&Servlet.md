@@ -1,4 +1,4 @@
-#Web相关概念
+# Web相关概念
 
 	1. 软件架构
 		1. C/S：客户端/服务器端
@@ -6,8 +6,8 @@
 	
 	2. 资源分类
 		1. 静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析
-			* 如： html,css,JavaScript
-			
+			* 如：html,css,JavaScript
+	
 		2. 动态资源:每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。
 		动态资源被访问后，需要先转换为静态资源，在返回给浏览器
 			* 如：servlet/jsp,php,asp....
@@ -21,7 +21,7 @@
 				1. tcp:安全协议，三次握手。 速度稍慢
 				2. udp：不安全协议。 速度快
 
-#Web服务器软件
+# Web服务器软件
 
 	* 服务器：安装了服务器软件的计算机
 	* 服务器软件：接收用户的请求，处理请求，做出响应
@@ -36,7 +36,7 @@
 		
 	* Tomcat：Apache基金组织，中小型的JavaEE服务器，仅仅支持少量的JavaEE规范servlet/jsp。开源的免费的。
 
-#Tomcat
+# Tomcat
 
 	* JavaEE：Java语言在企业级开发中使用的技术规范的总和，一共规定了13项大的规范
 	
@@ -82,12 +82,12 @@
 						* war包会自动解压缩
 						
 					http://localhost:8080/hello/hello.html
-
+	
 				推荐使用
 				3. 在conf\Catalina\localhost创建任意名称的xml文件。在文件中编写
 					<Context docBase="D:\hello" />
 					* 虚拟目录：xml文件的名称
-
+	
 			* 静态项目和动态项目：
 				* 目录结构
 					* java动态项目的目录结构：
@@ -102,7 +102,7 @@
 	* 将Tomcat集成到IDEA中，并且创建JavaEE的项目，部署项目。
 	RUN-EDIT CONFIGURATION
 
-#Servlet
+# Servlet
 
 	server applet
 	* 概念：运行在服务器端的小程序
@@ -160,7 +160,7 @@
 			* 只有服务器正常关闭时，才会执行destroy方法。
 			* destroy方法在Servlet被销毁之前执行，一般用于释放资源
 
-#Servlet3.0
+# Servlet3.0
 
 
 	* Servlet3.0：
@@ -172,23 +172,23 @@
 			2. 定义一个类，实现Servlet接口
 			3. 复写方法
 			4. 在类上使用@WebServlet注解，进行配置
-				@WebServlet("资源路径")			
+			@WebServlet("资源路径")			
 
-#IDEA与tomcat的相关配置
+# IDEA与tomcat的相关配置
 
 	1. IDEA会为每一个tomcat部署的项目单独建立一份配置文件
 		* 查看控制台的log：Using CATALINA_BASE:  
 	    "C:\Users\Hery\.IntelliJIdea2019.2\system\tomcat\Tomcat_8_5_31_JavaWeb_2"
 	    其conf\Catalina\localhost下，有 虚拟路径.xml文件 ，部署文件指向out下资源
 	
-	2. 工作空间项目    和     tomcat部署的web项目
+	2. 工作空间项目     和     tomcat部署的web项目
 		* tomcat真正访问的是“tomcat部署的web项目”，"tomcat部署的web项目"对应着"工作空间项目" 的web目录下的所有资源。
 		"C:\Users\Hery\IdeaProjects\JavaWeb\out\artifacts\servlet_war_exploded"
 		
 		* WEB-INF目录下的资源不能被浏览器直接访问。
 		
 	3. 断点调试：使用"小虫子"启动 dubug 启动
-#Servlet体系结构
+# Servlet体系结构
 
 ```
 Servlet的体系结构	
@@ -210,7 +210,7 @@ Servlet的体系结构
 
 ![image-20200604140425736](C:\Users\Hery\Desktop\GitHub\javaweb\Tomcat&Servlet.assets\image-20200604140425736.png)
 
-#Servlet相关配置
+# Servlet相关配置
 
 ```
 Servlet相关配置

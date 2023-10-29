@@ -1,4 +1,5 @@
-#Web概述
+# Web概述
+
 ```
 * 软件架构：
 	1. C/S: Client/Server 客户端/服务器端
@@ -37,17 +38,18 @@
 		* CSS：用于美化页面，布局页面
 		* JavaScript：控制页面的元素，让页面有一些动态的效果
 ```
-#HTML
+# HTML
 Hyper Text Markup Language 超文本标记语言
+
 * 超文本:
 	* 超文本是用超链接的方法，将各种不同空间的文字信息组织在一起的网状文本.
 * 标记语言:
 	* 由标签构成的语言。<标签名称> 如 html，xml
 	* 标记语言不是编程语言
 
-#标签
+# 标签
 
-##文件标签
+## 文件标签
 
 ```
 1. 文件标签：构成html最基本的标签
@@ -57,7 +59,7 @@ Hyper Text Markup Language 超文本标记语言
  body：体标签
  <!DOCTYPE html>：html5中定义该文档是html文档
 ```
-##文本标签
+## 文本标签
 
 ```
 2. 文本标签：和文本有关的标签
@@ -117,7 +119,7 @@ Hyper Text Markup Language 超文本标记语言
 		
 		    <img src="../image/jiangwai_1.jpg">
 ```
-##列表标签
+## 列表标签
 
 ```
 4. 列表标签：
@@ -128,7 +130,7 @@ Hyper Text Markup Language 超文本标记语言
 			* ul:
 			* li:
 ```
-##链接标签
+## 链接标签
 
 ```
 5. 链接标签：
@@ -152,7 +154,7 @@ Hyper Text Markup Language 超文本标记语言
 
 <a href="http://www.itcast.cn"><img src="image/jiangwai_1.jpg"></a>
 ```
-##表格标签
+## 表格标签
 
 ```
 8. 表格标签：
@@ -175,7 +177,7 @@ Hyper Text Markup Language 超文本标记语言
             * <tbody>：表示表格的体部分
             * <tfoot>：表示表格的脚部分
 ```
-##表单标签
+## 表单标签
 
 ```
 * 表单：
@@ -231,7 +233,7 @@ Hyper Text Markup Language 超文本标记语言
 			* cols：指定列数，每一行有多少个字符
 			* rows：默认多少行。
 ```
-##其他
+## 其他
 
 ```
 6. div和span：
